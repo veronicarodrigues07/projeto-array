@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Compras Supermercado</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="wrapper">
+<form action="" method="post" id="form">
+<legend>Lista de Compras</legend>
+
+ 
+
+        <div class="colunas">
+<div>
+<label for="nome">Nome do Produto</label>
+<input type="text" id="nome" placeholder="Nome do Produto" />
+</div>
+<div>
+<label for="valor">Valor (R$)</label>
+<input
+              type="number"
+              step="0.01"
+              id="valor"
+              placeholder="Valor do Produto"
+            />
+</div>
+</div>
+<input
+          type="button"
+          class="btn"
+          value="Adicionar"
+          onclick="adicionar()"
+        />
+</form>
+<div class="lista">
+<h3>
+          Lista
+<input
+            type="text"
+            id="busca"
+            placeholder="Buscar Produto"
+            onchange="buscar()"
+          />
+</h3>
+<div id="saida"></div>
+</div>
+<div class="total">
+<h3>Total: R$ <span id="total">0.00</span></h3>
+</div>
+</div>
+<script>
+      const produtos = [];
+
+ 
+
+      function adicionar() {
+        const nome = document.getElementById("nome").value;
+        const valor = Number(document.getElementById("valor").value);
+        const form = document.getElementById("form");
+        // se o nome for igual a vazio ou o valor
+        if (nome == "" || valor == "") {
+          alert("Insira todos os campos do Produto");
+          return;
+        }
+        // se o valor for menor ou igual a zero
+        if (valor <= 0) {
+          alert("O valor do produto está inválido");
+          return;
+        }
+        // Verifica se já existe esse produto na lista
+        var seExiste = produtos.find(element => element[0] === nome);
+        if (seExiste) {
+          alert("O produto já existe na lista");
+          return;
+        }
+        produtos.push([nome, valor]);
+        // limpa o formulário depois de adicionar
+        form.reset();
+        exibir();
+        total();
+      }
+      function exibir(filtro = "") {
+        /* Criar a lista de Produtos */
+        // Cria um elemento ul e adiciona na constante lista
+        const lista = document.createElement("ul");
+        // novo vetor para filtro
+        let listaProds = [];
+        // caso seja passado algum filtro ele receba apenas os buscados
+        if (filtro != "") {
+          listaProds = produtos.filter(produto => produto[0].includes(filtro));
+        } else {
+          listaProds = produtos;
+        }
+        // para cada item de produtos...
+        listaProds.forEach(item => {
+          // vamos criar um novo elemento de item da lista
+          const listaItem = document.createElement("li");
+          // vamos criar um Texto e adicionar na constante
+          // o texto vai ser o Nome e o Valor, ex.: Café - R$ 4.00
+          const texto = document.createTextNode(item[0] + " - R$ " + item[1]);
+          // adiciona o texto em listaItem
+          listaItem.append(texto);
+          // adiciona o item da lista na lista
+          lista.append(listaItem);
+        });
+        // Vamos pegar o elemento onde vai ser inserido a lista
+        const saida = document.getElementById("saida");
+        // precisamos apagar a lista anterior sempre que atualizar
+        saida.innerHTML = "";
+        // iremos adicionar a lista no lugar correto
+        saida.append(lista);
+      }
+      function total() {
+        var listaValores = produtos.map(item => item[1]);
+        var total = listaValores.reduce((total, valor) => total + valor);
+        const totalEl = document.getElementById("total");
+        totalEl.innerText = total;
+      }
+      function buscar() {
+        var busca = document.getElementById("busca").value;
+        exibir(busca);
+      }
+</script>
+</body>
+</html>
