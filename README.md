@@ -20,4 +20,4 @@ Ao acessar o site o usuário sera direcionado para a página inicial, lá ira ap
  - `Valor`: Esse campo será utilizado para adiconar o valor do produto  
  - `Lista`: Caso o usuario queira rever o valor do produto, só digitar pelo o nome que logo irá aparecer 
  - `Total`: Irá somar o valor de sua lista de compras por completo
- ![image info](img/gif.mp4)
+ ![image info](video/gif.gif)
