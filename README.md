@@ -35,7 +35,10 @@ Ao acessar o site o usuário sera direcionado para a página inicial, lá ira ap
 * github
 
 ## Fontes consultadas 🛠️
-[veronica] https://github.com/veronicarodrigues07/projeto-array
+[gzmel] https://github.com/gzmael/lista-compras
+
+## Autores ✒️
+[veronica] https://github.com/veronicarodrigues07/projeto-array  
 ![image info](img/foto.png)
 
 
