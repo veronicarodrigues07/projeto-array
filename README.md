@@ -27,3 +27,15 @@ Ao acessar o site o usuário sera direcionado para a página inicial, lá ira ap
   - `Total`: Irá somar o valor de sua lista de compras por completo
 
  ![image info](video/gif.gif) 
+
+ ### Tecnologia utilizadas ⌨️ 
+* Html
+* Array
+* style
+* github
+
+## Fontes consultadas 🛠️
+[veronica] https://github.com/veronicarodrigues07/projeto-array
+![image info](img/foto.png)
+
+
