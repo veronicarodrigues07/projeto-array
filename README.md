@@ -39,6 +39,7 @@ Ao acessar o site o usuário sera direcionado para a página inicial, lá ira ap
 
 ## Autores ✒️
 [veronica] https://github.com/veronicarodrigues07/projeto-array  
+
 ![image info](img/foto.png)
 
 
