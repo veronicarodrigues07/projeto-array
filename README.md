@@ -1,4 +1,4 @@
-# índice
+# ı́ndıce
 
 [Projeto- Criando um sistema de lista de compras](#projeto---criando-lista-de-compra)  
 [Descrição](#descri%C3%A7%C3%A3o)  
