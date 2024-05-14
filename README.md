@@ -10,7 +10,7 @@
 
 # Projeto lista 🚀 - criando um sistemema de lista de compras
 
-![image info](img/tela.png) 
+![image info]) 
 
 ## Descrição📝
 O Projeto de Lista de compras é uma das melhores ferramentas para os usuarios, tem o intuito de ajudar o cliente a buscar e somar suas compras 
